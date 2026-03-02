@@ -35,6 +35,9 @@ return {
                 "lua_ls",
                 "clangd",
                 "pyright",
+                "vtsls",
+                "pyright",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler
