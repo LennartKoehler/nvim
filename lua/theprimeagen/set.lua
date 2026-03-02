@@ -1,5 +1,9 @@
-vim.opt.guicursor = ""
-
+vim.opt.guicursor = table.concat({
+  "n-v-c:block-Cursor-blinkon200-blinkoff150-blinkwait300",
+  "i-ci-ve:ver25-Cursor-blinkon200-blinkoff150-blinkwait300",
+  "r-cr-o:hor20-Cursor-blinkon200-blinkoff150-blinkwait300",
+}, ",")
+vim.o.cursorline = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
