@@ -1,35 +1,36 @@
-return {
-
-    {
-        "github/copilot.vim",
-        config = function()
-            -- Disable inline suggestions completely
-            vim.g.copilot_enabled = false
-        end,
-    },
-
-    {
-        "olimorris/codecompanion.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim"
-        },
-        opts = {
-            interactions = {
-                chat = {
-                    adapter = "copilot",
-                    model = "gpt-4.1"
-                },
-            },
-            -- NOTE: The log_level is in `opts.opts`
-            opts = {
-                log_level = "TRACE",
-            },
-        },
-        keys = {
-            { "<leader>cc", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
-        },
-    },
-}
+return {}
+-- return {
+--
+--     {
+--         "github/copilot.vim",
+--         config = function()
+--             -- Disable inline suggestions completely
+--             vim.g.copilot_enabled = false
+--         end,
+--     },
+--
+--     {
+--         "olimorris/codecompanion.nvim",
+--         dependencies = {
+--             "nvim-lua/plenary.nvim"
+--         },
+--         opts = {
+--             interactions = {
+--                 chat = {
+--                     adapter = "copilot",
+--                     model = "gpt-4.1"
+--                 },
+--             },
+--             -- NOTE: The log_level is in `opts.opts`
+--             opts = {
+--                 log_level = "TRACE",
+--             },
+--         },
+--         keys = {
+--             { "<leader>cc", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
+--         },
+--     },
+-- }
 --  "CopilotC-Nvim/CopilotChat.nvim", -- Copilot Chat
 --   {
 --     "CopilotC-Nvim/CopilotChat.nvim",
