@@ -1,4 +1,4 @@
-
+-- CodeCompanion local LLM adapter configuration
 local modelState = {
     ANTICIPATING_REASONING = 1,
     REASONING = 2,
@@ -36,6 +36,7 @@ return {
                 http = {
                     local_llm = adapters.extend("openai_compatible", {
                         name = "local_llm",
+                        tools = adapters.USAGE_ADAPTER_TOOLS,  -- Enable editing tools
                         formatted_name = "Local LLM",
                         roles = { system = "system", user = "user", assistant = "assistant" },
                         env = {
@@ -56,12 +57,11 @@ return {
                             return true
                         end,
                         handlers = {
-                            chat_output = function(self, indata)
+                            chat_output = function(self, indata, tools)
                                 -- normalize data: if it's a string, convert it to a table
                                 local formatLine = true
                                 local openai = require("codecompanion.adapters.http.openai")
-                                local data = openai.handlers.chat_output(self, indata)
-
+                                local data = openai.handlers.chat_output(self, indata, tools)
                                 if type(data) == "string" then
                                     data = { output = { content = data } }
                                 elseif type(data) == "table" then
