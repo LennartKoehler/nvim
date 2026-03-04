@@ -13,7 +13,6 @@ return {
     "olimorris/codecompanion.nvim",
     version = "^19.0.0",
     lazy = false,
-    debug = true,
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-treesitter/nvim-treesitter",
@@ -27,6 +26,7 @@ return {
 
 
         require("codecompanion").setup({
+            debug = true,
             strategies = {
                 chat = {
                     adapter = "local_llm",
@@ -171,10 +171,11 @@ return {
             prompt_library = {
                 markdown = {
                     dirs = {
-                        vim.fn.getcwd() .. "/lua/prompts", -- Can be relative
+                        "~/.config/nvim/lua/prompts",
                     },
                 },
             },
         })
+
     end,
 }

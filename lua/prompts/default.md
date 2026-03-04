@@ -1,7 +1,7 @@
 ---
 name: default
 interaction: chat
-description: Generate a commit message
+Description: Default Coding Assistant
 opts:
     alias: default
     auto_submit: false
@@ -18,8 +18,5 @@ You should help me code
 
 ## user
 
-
-```
-#{buffer}
-```
+The code im talking about is here: #{buffer}
 

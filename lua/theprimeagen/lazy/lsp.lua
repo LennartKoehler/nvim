@@ -35,7 +35,6 @@ return {
                 "lua_ls",
                 "clangd",
                 "pyright",
-                "vtsls",
                 "pyright",
                 "clangd",
             },
