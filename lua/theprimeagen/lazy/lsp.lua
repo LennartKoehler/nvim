@@ -118,6 +118,7 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
+            enabled = false,
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)

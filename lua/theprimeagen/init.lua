@@ -82,14 +82,8 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "codecompanion",
-    callback = function()
-        -- Use vim.schedule to wait until buffer is fully ready
-        vim.schedule(function()
-            -- Go to normal mode, append a new line, and start insert mode
-            vim.cmd("normal! Go")
-            vim.cmd("startinsert")
-        end)
-    end,
+-- disable autocomplete on codecompanion buffer
+local cmp = require("cmp")
+cmp.setup.filetype("codecompanion", {
+  sources = {}  -- no sources = no completion
 })
