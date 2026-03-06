@@ -60,6 +60,14 @@ autocmd('BufEnter', {
     end
 })
 
+vim.cmd("syntax enable")
+vim.api.nvim_set_hl(0, "TodoComment", { fg = "#FFAF00", bold = false })
+vim.cmd([[
+  augroup TodoHighlight
+    autocmd!
+    autocmd BufEnter,BufReadPost * syntax match TodoComment /TODO\|FIXME\|NOTE|\TESTVALUE|\IMPORTANT/
+  augroup END
+]])
 
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
