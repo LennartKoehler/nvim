@@ -9,8 +9,8 @@ return {
         local c = require("vscode.colors").get_colors()
 
         require("vscode").setup({
-            transparent = true, -- keep background transparent
-            italic_comments = true,
+            transparent = false,
+            italic_comments = false,
             italic_inlayhints = true,
             underline_links = true,
             disable_nvimtree_bg = true,

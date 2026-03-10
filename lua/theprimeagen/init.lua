@@ -1,6 +1,3 @@
-
-
-
 require("theprimeagen.set")
 require("theprimeagen.remap")
 require("theprimeagen.lazy_init")
@@ -60,14 +57,6 @@ autocmd('BufEnter', {
     end
 })
 
-vim.cmd("syntax enable")
-vim.api.nvim_set_hl(0, "TodoComment", { fg = "#FFAF00", bold = false })
-vim.cmd([[
-  augroup TodoHighlight
-    autocmd!
-    autocmd BufEnter,BufReadPost * syntax match TodoComment /TODO\|FIXME\|NOTE|\TESTVALUE|\IMPORTANT/
-  augroup END
-]])
 
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
@@ -95,3 +84,5 @@ local cmp = require("cmp")
 cmp.setup.filetype("codecompanion", {
   sources = {}  -- no sources = no completion
 })
+
+vim.highlight.priorities.semantic_tokens = 95
