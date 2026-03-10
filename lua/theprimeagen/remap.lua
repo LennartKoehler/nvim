@@ -30,9 +30,16 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set({ "n", "v" }, "<leader>cp", '"+p')
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>cp", [["+p]])
+
+
+vim.keymap.set({'c'}, '<C-p>', function()
+  local clip = vim.fn.getreg('+')
+  -- remove leading colon if present
+  clip = clip:gsub('^:', '')
+  vim.fn.feedkeys(clip, 'n')
+end, { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
