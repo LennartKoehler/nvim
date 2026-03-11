@@ -30,8 +30,15 @@ return {
     config = function()
         local adapters = require("codecompanion.adapters")
 
-
         require("codecompanion").setup({
+            interactions = {
+                chat = {
+                  opts = {
+                    completion_provider = "cmp", -- blink|cmp|coc|default
+                  }
+                }
+              },
+            autocomplete = false,
             debug = true,
             strategies = {
                 chat = {

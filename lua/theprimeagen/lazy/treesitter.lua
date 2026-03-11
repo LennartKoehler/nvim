@@ -9,6 +9,7 @@ return {
 			require("nvim-treesitter.configs").setup({
 				-- A list of parser names, or "all"
 				ensure_installed = {
+                    "comment",
 					"vimdoc",
                     "yaml",
                     "cpp",
@@ -33,7 +34,7 @@ return {
 				indent = {
 					enable = true,
 				},
-
+                  playground = { enable = true },
 				highlight = {
 					-- `false` will disable the whole extension
 					enable = true,
@@ -59,7 +60,7 @@ return {
 					-- Set this to `true` if you depend on "syntax" being enabled (like for indentation).
 					-- Using this option may slow down your editor, and you may see some duplicate highlights.
 					-- Instead of true it can also be a list of languages
-					additional_vim_regex_highlighting = { "markdown" },
+                    additional_vim_regex_highlighting = false,
 				},
 			})
 
@@ -75,8 +76,20 @@ return {
 			vim.treesitter.language.register("templ", "templ")
 		end,
 	},
-
-	{
+    {
+        "nvim-treesitter/playground",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                playground = {
+                    enable = true,
+                    disable = {},
+                    updatetime = 25, -- fast updates
+                }
+            }
+        end
+    },
+    {
 		"nvim-treesitter/nvim-treesitter-context",
 		after = "nvim-treesitter",
 		config = function()
@@ -97,4 +110,5 @@ return {
 			})
 		end,
 	},
+
 }

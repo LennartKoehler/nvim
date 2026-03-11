@@ -31,8 +31,17 @@ return {
             end,
         })
 
+        vim.keymap.set("n", "dp", function()
+          vim.cmd("normal! dp")  -- stage current hunk
+          vim.cmd("normal! ]c")  -- jump to next hunk
+        end, { noremap = true, silent = true })
 
-        vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
-        vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
+        vim.keymap.set("n", "do", function()
+          vim.cmd("normal! do")  -- discard current hunk
+          vim.cmd("normal! ]c")  -- jump to next hunk
+        end, { noremap = true, silent = true })
+        vim.keymap.set("n", "go", "<cmd>diffget //2<CR>")
+        vim.keymap.set("n", "gp", "<cmd>diffget //3<CR>")
+
     end
 }

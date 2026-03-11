@@ -52,6 +52,10 @@ return {
                 ["clangd"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.clangd.setup({
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+  handlers = {
+    ["textDocument/semanticTokens/full"] = function(...) end
+  },
                         capabilities = capabilities,
                         cmd = { "clangd", "--compile-commands-dir=build" }, -- points to your project's compile_commands.json
                         root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),

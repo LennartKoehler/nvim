@@ -1,6 +1,3 @@
-
-
-
 require("theprimeagen.set")
 require("theprimeagen.remap")
 require("theprimeagen.lazy_init")
@@ -61,6 +58,8 @@ autocmd('BufEnter', {
 })
 
 
+
+
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
     callback = function(e)
@@ -82,6 +81,7 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "codecompanion",
     callback = function()
@@ -93,6 +93,11 @@ vim.api.nvim_create_autocmd("FileType", {
         end)
     end,
 })
-
+-- disable autocomplete on codecompanion buffer
+local cmp = require("cmp")
+cmp.setup.filetype("codecompanion", {
+  sources = {}  -- no sources = no completion
+})
 
 vim.opt.conceallevel = 2
+vim.highlight.priorities.semantic_tokens = 95
