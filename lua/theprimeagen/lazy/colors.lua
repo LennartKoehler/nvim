@@ -9,7 +9,7 @@ return {
         local c = require("vscode.colors").get_colors()
 
         require("vscode").setup({
-            transparent = true, -- keep background transparent
+            transparent = false, -- keep background transparent
             italic_comments = true,
             italic_inlayhints = true,
             underline_links = true,
