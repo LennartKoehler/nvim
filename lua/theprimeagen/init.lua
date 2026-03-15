@@ -76,6 +76,7 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     end
 })
+vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", {})
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
@@ -88,3 +89,10 @@ cmp.setup.filetype("codecompanion", {
 })
 
 vim.highlight.priorities.semantic_tokens = 95
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.keymap.set("n", "<CR>", "<CR>:cclose<CR>", { buffer = true })
+  end,
+})
