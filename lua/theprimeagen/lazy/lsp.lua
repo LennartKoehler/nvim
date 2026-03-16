@@ -1,6 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+          "p00f/clangd_extensions.nvim",
         "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -51,20 +52,22 @@ return {
 
                 -- clangd setup
                 ["clangd"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.clangd.setup({
-                        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                        handlers = {
-                            ["textDocument/semanticTokens/full"] = function(...) end
-                        },
-                        capabilities = capabilities,
-                        cmd = { "clangd", "--compile-commands-dir=build" }, -- points to your project's compile_commands.json
-                        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
-                        init_options = {
-                            compilationDatabasePath = "build",
-                            clangdFileStatus = true,
-                        },
-                    })
+
+                    capabilities = require("cmp_nvim_lsp").default_capabilities()
+                    require("clangd_extensions").setup({
+                            server = {
+                                capabilities = capabilities,
+                                handlers = {
+                                    ["textDocument/semanticTokens/full"] = function(...) end
+                                },
+                                cmd = { "clangd", "--compile-commands-dir=build" },
+                                root_dir = require("lspconfig").util.root_pattern("compile_commands.json", ".git"),
+                                init_options = {
+                                    compilationDatabasePath = "build",
+                                    clangdFileStatus = true,
+                                },
+                            }
+                        })
                 end,
 
                 zls = function()
@@ -127,7 +130,7 @@ return {
 
             enabled = function()
                 -- Disable cmp when in the codecompanion buffer
-                if vim.bo.filetype == "codecompanion" then
+                if vim.bo.filetype == "codecompanion"  or vim.bo.filetype == "telescopeprompt" or vim.bo.filetype == "markdown" then
                     return false
                 end
                 return true
@@ -140,7 +143,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-f>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
@@ -162,5 +165,6 @@ return {
                 prefix = "",
             },
         })
-    end
+    end,
 }
+
