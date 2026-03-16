@@ -28,6 +28,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.diffopt:remove("inline")
 
 
 vim.opt.fillchars:append { eob = " " }

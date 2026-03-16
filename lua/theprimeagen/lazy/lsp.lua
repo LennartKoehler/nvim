@@ -1,6 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+          "p00f/clangd_extensions.nvim",
         "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -50,20 +51,22 @@ return {
 
                 -- clangd setup
                 ["clangd"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.clangd.setup({
-  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-  handlers = {
-    ["textDocument/semanticTokens/full"] = function(...) end
-  },
-                        capabilities = capabilities,
-                        cmd = { "clangd", "--compile-commands-dir=build" }, -- points to your project's compile_commands.json
-                        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
-                        init_options = {
-                            compilationDatabasePath = "build",
-                            clangdFileStatus = true,
-                        },
-                    })
+
+                    capabilities = require("cmp_nvim_lsp").default_capabilities()
+                    require("clangd_extensions").setup({
+                            server = {
+                                capabilities = capabilities,
+                                handlers = {
+                                    ["textDocument/semanticTokens/full"] = function(...) end
+                                },
+                                cmd = { "clangd", "--compile-commands-dir=build" },
+                                root_dir = require("lspconfig").util.root_pattern("compile_commands.json", ".git"),
+                                init_options = {
+                                    compilationDatabasePath = "build",
+                                    clangdFileStatus = true,
+                                },
+                            }
+                        })
                 end,
 
                 zls = function()
@@ -147,8 +150,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             }, {
-                { name = 'buffer' },
-            })
+                    { name = 'buffer' },
+                })
         })
 
         vim.diagnostic.config({
@@ -161,5 +164,6 @@ return {
                 prefix = "",
             },
         })
-    end
+    end,
 }
+
