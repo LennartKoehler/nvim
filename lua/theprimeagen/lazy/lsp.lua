@@ -33,6 +33,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "marksman",
                 "clangd",
                 "pyright",
                 "pyright",
@@ -123,6 +124,14 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
+
+            enabled = function()
+                -- Disable cmp when in the codecompanion buffer
+                if vim.bo.filetype == "codecompanion" then
+                    return false
+                end
+                return true
+            end,
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)
