@@ -85,7 +85,6 @@ vim.g.netrw_winsize = 25
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "codecompanion",
     callback = function()
-        -- Use vim.schedule to wait until buffer is fully ready
         vim.schedule(function()
             -- Go to normal mode, append a new line, and start insert mode
             vim.cmd("normal! Go")
@@ -99,5 +98,61 @@ cmp.setup.filetype("codecompanion", {
   sources = {}  -- no sources = no completion
 })
 
-vim.opt.conceallevel = 2
+
+vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#63698c')
+vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
+vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
+vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
+vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
+
+
+-- vim.opt.conceallevel = 2
 vim.highlight.priorities.semantic_tokens = 95
+
+
+
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = "codecompanion",
+--         local buf = args.buf,
+--         local chat = require("codecompanion").buf_get_chat(buf),
+--
+--         chat:add_callback("on_completed", function(chat, cb_args, c, info)
+--
+--                 print("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG")
+--                 vim.api.nvim_exec_autocmds({
+--                     event = "CursorMoved",
+--                     buffer = buf,
+--                 })
+--                 vim.api.nvim_exec_autocmds({
+--                     event = "CursorMovedI",
+--                     buffer = buf,
+--                 })
+--
+--                 print("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG")
+--             -- local render_md = require("render-markdown")
+--             -- render_md.disable()
+--             -- render_md.enable()
+--             -- print("triggered")
+--             -- vim.api.command("checktime")
+--
+--         --     -- Force Tree-sitter to parse buffer
+--         --     local parser = vim.treesitter.get_parser(buf, "markdown")
+--         --     if parser then parser:parse() end
+--         --     print("rendering buffer", args.buf)
+--         --     render_md.buf_enable()
+--         --     -- Make sure window is valid
+--         --     local wins = vim.fn.win_findbuf(buf)
+--         --     local win = wins[1] or vim.api.nvim_get_current_win()
+--         --
+--         --     -- Ensure conceallevel if using conceal
+--         --     vim.api.nvim_win_set_option(win, "conceallevel", 2)
+--         --     vim.api.nvim_win_set_option(win, "concealcursor", "nc")
+--         --
+--         -- local log = require('render-markdown.core.log')
+--         --     render_md.render({buf = buf, event = "testevent123"})
+--         --     log.buf('info', 'Update', buf, "testevent")
+--         --
+--         end)
+-- })
+--

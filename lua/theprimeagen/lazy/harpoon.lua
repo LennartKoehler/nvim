@@ -7,6 +7,7 @@ return {
     local harpoon = require("harpoon")
     harpoon:setup()
 
+
     -- Add / Prepend
     vim.keymap.set("n", "<leader>A", function()
       harpoon:list():prepend()
@@ -38,4 +39,5 @@ return {
       harpoon:list():select(4)
     end, { desc = "Harpoon Select 4" })
   end,
+
 }

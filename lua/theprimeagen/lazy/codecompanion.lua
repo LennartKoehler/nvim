@@ -16,12 +16,6 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-treesitter/nvim-treesitter",
-      {
-        "MeanderingProgrammer/render-markdown.nvim", -- Enhanced markdown rendering
-        -- "MeanderingProgrammer/markdown.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-        ft = { "markdown", "codecompanion" },
-        },
     },
     keys = {
         { "<leader>cc", "<cmd>CodeCompanion /default<cr>", desc = "Code Companion Chat" },
@@ -29,7 +23,6 @@ return {
     },
     config = function()
         local adapters = require("codecompanion.adapters")
-
         require("codecompanion").setup({
             interactions = {
                 chat = {
@@ -60,7 +53,7 @@ return {
                         schema = {
                             model = { default = "vllm/minimax-m2.5-128k" },
                             temperature = { default = 0.7 },
-                            max_tokens = { default = 2048 },
+                            -- max_tokens = { default = 2048 },
                         },
                         ---Check for a token before starting the request
                         ---@param self CodeCompanion.Adapter
@@ -139,47 +132,6 @@ return {
                 },
             },
 
-            --     handlers = {
-            --   response = {
-            --     parse_meta = function(self, data)
-            --       print(">>> parse_meta called!")
-            --       local extra = data.extra
-            --       if extra.reasoning_content then
-            --         data.output.reasoning = { content = extra.reasoning_content }
-            --         if data.output.content == "" then
-            --           data.output.content = nil
-            --         end
-            --       end
-            --       if data.output.content then
-            --         data.output.content = data.output.content:gsub("</think>", "[REASONING END]")
-            --       end
-            --       return data
-            --     end,
-            --   },
-            -- },
-            --       groups = {
-            --         my_agent = {
-            --           description = "My custom agent",
-            --           system_prompt = function(group, ctx)
-            --             return string.format([[
-            -- You are a coding agent.
-            --
-            -- The date is %s.
-            -- The user is on %s.
-            --
-            -- You always have access to the current file:
-            --
-            -- #{buffer}
-            -- ]], ctx.date, ctx.os)
-            --           end,
-            --           tools = { "read_file", "insert_edit_into_file", "run_command" },
-            --           opts = {
-            --
-            --             ignore_system_prompt = true,
-            --             ignore_tool_system_prompt = true,
-            --           },
-            --         },
-            --       },
 
             prompt_library = {
                 markdown = {
@@ -190,5 +142,7 @@ return {
             },
         })
 
+
     end,
+
 }

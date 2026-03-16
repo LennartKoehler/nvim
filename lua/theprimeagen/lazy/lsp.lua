@@ -126,7 +126,7 @@ return {
 
             enabled = function()
                 -- Disable cmp when in the codecompanion buffer
-                if vim.bo.filetype == "codecompanion" then
+                if vim.bo.filetype == "codecompanion"  or vim.bo.filetype == "telescopeprompt" or vim.bo.filetype == "markdown" then
                     return false
                 end
                 return true
@@ -139,7 +139,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-f>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
