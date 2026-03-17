@@ -1,3 +1,4 @@
+
 return{
     "sunjon/Shade.nvim",
 
@@ -14,4 +15,5 @@ return{
           exclude_buftypes = { "nofile", "prompt" },
         })
     end,
+
 }
