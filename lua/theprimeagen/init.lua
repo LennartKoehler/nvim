@@ -110,7 +110,28 @@ vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
 -- vim.opt.conceallevel = 2
 vim.highlight.priorities.semantic_tokens = 95
 
-
+-- local function any_dapui_active()
+--     for _, win in ipairs(vim.api.nvim_list_wins()) do
+--         local buf = vim.api.nvim_win_get_buf(win)
+--         local ft = vim.bo[buf].filetype
+--         if ft:match("^dapui_") then
+--             return true
+--         end
+--     end
+--     return false
+-- end
+--
+-- local shade = require("shade")
+-- vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "BufEnter", "WinClosed" }, {
+--     callback = function()
+--         if any_dapui_active() then
+--             shade.toggle(false) -- disable shading
+--         else
+--             shade.toggle(true)  -- enable shading
+--         end
+--     end,
+-- })
+--
 
 
 -- vim.api.nvim_create_autocmd("FileType", {
@@ -156,4 +177,5 @@ vim.highlight.priorities.semantic_tokens = 95
 --         --
 --         end)
 -- })
+--
 --
