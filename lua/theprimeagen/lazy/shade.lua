@@ -1,5 +1,5 @@
 return{
-    "sunjon/Shade.nvim",
+    "LennartKoehler/shade.nvim",
 
     config = function()
         require'shade'.setup({
