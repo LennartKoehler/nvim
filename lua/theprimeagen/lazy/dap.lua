@@ -59,13 +59,14 @@ end
 local function focus_main_code_window()
     -- Get all windows
     local win_ids = vim.api.nvim_list_wins()
-    print("focusing on main code")
+
 
     -- DAP UI filetypes to exclude
     -- We check the filetype instead of the buffer name as it's more reliable
     local dap_filetypes = {
         "dap-repl",
         "dapui-watches",
+        "dapui_watches",
         "dapui_scopes",
         "dapui-scopes",
         "dapui-stacks",
@@ -76,6 +77,7 @@ local function focus_main_code_window()
         "dapui_console",
         "dapui-terminal",
         "dapui_terminal",
+        "dapui_hover",
     }
 
     local function is_dap_buffer(bufnr)
@@ -94,13 +96,13 @@ local function focus_main_code_window()
         local name = vim.api.nvim_buf_get_name(bufnr)
 
         -- Skip if empty buffer name or DAP UI buffer
-        if name ~= "" and not is_dap_buffer(bufnr) then
+        if not is_dap_buffer(bufnr) then
             vim.api.nvim_set_current_win(win_id)
             return
         end
     end
 
-    vim.notify("Could not find main code window", vim.log.levels.WARN)
+    -- vim.notify("Could not find main code window", vim.log.levels.WARN)
 end
 return {
     {
@@ -123,11 +125,6 @@ return {
         vim.keymap.set("n", "<leader>B", function()
             dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
         end, { desc = "Debug: Set Conditional Breakpoint" })
-        vim.keymap.set("n", "<leader>dw", function() focus_dap_window("DAP Watches") end, { desc = "Focus DAP Watches window" })
-        vim.keymap.set("n", "<leader>dr", function() focus_dap_window("dap-repl") end, { desc = "Focus DAP REPL window" })
-        vim.keymap.set("n", "<leader>ds", function() focus_dap_window("DAP Stacks") end, { desc = "Focus DAP Stacks window" })
-        vim.keymap.set("n", "<leader>dc", function() focus_dap_window("DAP Scopes") end, { desc = "Focus DAP Scopes window" })
-        vim.keymap.set("n", "<leader>dm", function() focus_main_code_window() end, { desc = "Focus main code window" })
 
     end
     },
@@ -140,6 +137,12 @@ return {
             local dap = require("dap")
             local dapui = require("dapui")
 
+
+            vim.keymap.set("n", "<leader>dw", function() focus_dap_window("DAP Watches") end, { desc = "Focus DAP Watches window" })
+            vim.keymap.set("n", "<leader>dr", function() focus_dap_window("dap-repl") end, { desc = "Focus DAP REPL window" })
+            vim.keymap.set("n", "<leader>ds", function() focus_dap_window("DAP Stacks") end, { desc = "Focus DAP Stacks window" })
+            vim.keymap.set("n", "<leader>dc", function() focus_dap_window("DAP Scopes") end, { desc = "Focus DAP Scopes window" })
+            vim.keymap.set("n", "<leader>dm", function() focus_main_code_window() end, { desc = "Focus main code window" })
             -- local function layout(name)
             --     return {
             --         elements = {
