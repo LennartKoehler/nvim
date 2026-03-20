@@ -110,6 +110,48 @@ vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
 -- vim.opt.conceallevel = 2
 vim.highlight.priorities.semantic_tokens = 95
 
+local function toggle_connected_comments()
+  local cs = vim.bo.commentstring:gsub("%%s", ""):gsub("%s+$", "")
+  if cs == "" then return end  -- skip if no commentstring
+
+  local line_num = vim.fn.line('.')  -- current line
+  local start_line = line_num
+
+  local current_line = vim.fn.getline(line_num)
+    if not current_line:match("^%s*" .. vim.pesc(cs)) then
+    vim.api.nvim_feedkeys("gcip", "mx", false)  -- "mx" sets mark x and returns
+        return
+    end
+
+
+ -- find start of consecutive commented block
+  while start_line > 1 do
+    local prev = vim.fn.getline(start_line - 1)
+    if prev:match("^%s*" .. vim.pesc(cs)) then
+      start_line = start_line - 1
+    else
+      break
+    end
+  end
+
+
+  local i = start_line
+  while i < vim.fn.line('$') do
+    local line = vim.fn.getline(i)
+    if line:match("^%s*" .. vim.pesc(cs)) then
+      -- uncomment
+      line = line:gsub("^%s*" .. vim.pesc(cs) .. " ?(%s*.*)$", "%1", 1)
+      vim.fn.setline(i, line)
+      i = i + 1
+    else
+        break
+    end
+
+  end
+end
+
+vim.keymap.set('n', '<leader>gcb', toggle_connected_comments, { noremap = true, silent = true })
+
 -- local function any_dapui_active()
 --     for _, win in ipairs(vim.api.nvim_list_wins()) do
 --         local buf = vim.api.nvim_win_get_buf(win)
@@ -120,7 +162,7 @@ vim.highlight.priorities.semantic_tokens = 95
 --     end
 --     return false
 -- end
---
+
 -- local shade = require("shade")
 -- vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter", "BufEnter", "WinClosed" }, {
 --     callback = function()
@@ -131,7 +173,7 @@ vim.highlight.priorities.semantic_tokens = 95
 --         end
 --     end,
 -- })
---
+
 
 
 -- vim.api.nvim_create_autocmd("FileType", {
