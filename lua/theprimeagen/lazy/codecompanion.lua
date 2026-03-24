@@ -21,9 +21,17 @@ return {
         { "<leader>cc", "<cmd>CodeCompanion /default<cr>", desc = "Code Companion Chat" },
         { "<leader>cy", "<cmd>CodeCompanionChat<cr>", desc = "Run Test Prompt" },
     },
+    opts = {
+        opts = {
+            log_level = "DEBUG", -- or "TRACE"
+        },
+    },
     config = function()
         local adapters = require("codecompanion.adapters")
         require("codecompanion").setup({
+          opts = {
+            log_level = "DEBUG", -- or "TRACE"
+          },
             interactions = {
                 chat = {
                   opts = {
@@ -52,7 +60,7 @@ return {
                         url = "${base_url}",
                         schema = {
                             model = { default = "vllm/minimax-m2.5-128k" },
-                            temperature = { default = 0.7 },
+                            -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },
                         ---Check for a token before starting the request

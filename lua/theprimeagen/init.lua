@@ -140,7 +140,7 @@ local function toggle_connected_comments()
     local line = vim.fn.getline(i)
     if line:match("^%s*" .. vim.pesc(cs)) then
       -- uncomment
-      line = line:gsub("^%s*" .. vim.pesc(cs) .. " ?(%s*.*)$", "%1", 1)
+      line = line:gsub("^(%s*)" .. vim.pesc(cs) .. " ?(%s*.*)$", "%1%2", 1)
       vim.fn.setline(i, line)
       i = i + 1
     else
