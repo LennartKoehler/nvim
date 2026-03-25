@@ -30,7 +30,7 @@ return {
         local adapters = require("codecompanion.adapters")
         require("codecompanion").setup({
           opts = {
-            log_level = "DEBUG", -- or "TRACE"
+            log_level = "TRACE", -- or "TRACE"
           },
             interactions = {
                 chat = {
@@ -59,7 +59,7 @@ return {
                         },
                         url = "${base_url}",
                         schema = {
-                            model = { default = "vllm/minimax-m2.5-128k" },
+                            model = { default = "vllm/glm-5-fp8-200k" },
                             -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },

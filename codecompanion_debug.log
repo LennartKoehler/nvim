@@ -1,0 +1,189 @@
+[DEBUG] 2026-03-25 18:14:49
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":" 🤠"}}]}
+[TRACE] 2026-03-25 18:14:49
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"content":" 🤠"}}]}
+
+[DEBUG] 2026-03-25 18:14:49
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"id":"chatcmpl-tool-b69577b2328217d4","function":{"arguments":"","name":"insert_edit_into_file"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:49
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"id":"chatcmpl-tool-b69577b2328217d4","function":{"arguments":"","name":"insert_edit_into_file"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"{\"filepath\": \""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"{\"filepath\": \""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/home/l"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/home/l"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ennart"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ennart"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"-ko"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"-ko"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ehler/."},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ehler/."},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"config/n"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"config/n"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"vim/l"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"vim/l"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ua/the"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"ua/the"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"primeagen"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"primeagen"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/lazy"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/lazy"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/codecom"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"/codecom"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"panion.lua"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"panion.lua"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:50
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"\""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:50
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"\""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":",\"edits\": [{\"oldText\": \"local modelState = {\", \"newText\": \"local modelState = {  -- State machine for tracking LLM output phases\", \"replaceAll\": false}]"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":",\"edits\": [{\"oldText\": \"local modelState = {\", \"newText\": \"local modelState = {  -- State machine for tracking LLM output phases\", \"replaceAll\": false}]"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":", \"explanation\": \""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":", \"explanation\": \""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"Added a comment"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"Added a comment"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" to line"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" to line"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" 2"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" 2"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" describing the"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" describing the"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" purpose"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" purpose"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" of the"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" of the"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" modelState"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" modelState"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" table\""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":" table\""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":", \"mode\": \""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":", \"mode\": \""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"append\""},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"tool_calls":[{"function":{"arguments":"append\""},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant","tool_calls":[{"function":{"arguments":"{\"filepath\": \"/home/lennart-koehler/.config/nvim/lua/theprimeagen/lazy/codecompanion.lua\", \"edits\": [{\"oldText\": \"local modelState = {\", \"newText\": \"local modelState = {  -- State machine for tracking LLM output phases\", \"replaceAll\": false}], \"explanation\": \"Added a comment to line 2 describing the purpose of the modelState table\", \"mode\": \"append\"}"},"type":"function","index":0}]}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{"role":"assistant","tool_calls":[{"function":{"arguments":"{\"filepath\": \"/home/lennart-koehler/.config/nvim/lua/theprimeagen/lazy/codecompanion.lua\", \"edits\": [{\"oldText\": \"local modelState = {\", \"newText\": \"local modelState = {  -- State machine for tracking LLM output phases\", \"replaceAll\": false}], \"explanation\": \"Added a comment to line 2 describing the purpose of the modelState table\", \"mode\": \"append\"}"},"type":"function","index":0}]}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"hosted_vllm/vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"finish_reason":"tool_calls","index":0,"delta":{}}]}
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"hosted_vllm/vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"finish_reason":"tool_calls","index":0,"delta":{}}]}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"hosted_vllm/vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{}}],"usage":{"completion_tokens":182,"prompt_tokens":7050,"total_tokens":7232,"completion_tokens_details":{"reasoning_tokens":0}}}
+[TRACE] 2026-03-25 18:14:51
+Tokens: 7232
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: {"id":"chatcmpl-906ee1b8b7982830","created":1774458888,"model":"hosted_vllm/vllm/glm-5-fp8-200k","object":"chat.completion.chunk","choices":[{"index":0,"delta":{}}],"usage":{"completion_tokens":182,"prompt_tokens":7050,"total_tokens":7232,"completion_tokens_details":{"reasoning_tokens":0}}}
+
+[DEBUG] 2026-03-25 18:14:51
+Output data:
+data: [DONE]
+[TRACE] 2026-03-25 18:14:51
+custom data log lklk: data: [DONE]
+
+
