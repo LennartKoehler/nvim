@@ -59,7 +59,8 @@ return {
                         },
                         url = "${base_url}",
                         schema = {
-                            model = { default = "vllm/glm-5-fp8-200k" },
+                            -- model = { default = "vllm/glm-5-fp8-200k" },
+                            model = { default = "vllm/minimax-m2.5-128k" },
                             -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },

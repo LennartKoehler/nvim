@@ -117,6 +117,7 @@ return {
         vim.keymap.set('n', '<F7>', require 'dap'.step_over)
         vim.keymap.set('n', '<F8>', require 'dap'.step_into)
         vim.keymap.set('n', '<F9>', require 'dap'.step_out)
+        vim.keymap.set('n', '<F10>', function() dap.run_to_cursor() end)
         vim.keymap.set('n', '<F6>', function()
                 require 'dap'.terminate()
                 require 'dapui'.close()
@@ -250,10 +251,18 @@ return {
                 enter = true,
             })
             dap.listeners.before.attach.dapui_config = function()
+                local current_win = vim.api.nvim_get_current_win()
                 dapui.open()
+                vim.schedule(function()
+                    vim.api.nvim_set_current_win(current_win)
+                end)
             end
             dap.listeners.before.launch.dapui_config = function()
+                local current_win = vim.api.nvim_get_current_win()
                 dapui.open()
+                vim.schedule(function()
+                    vim.api.nvim_set_current_win(current_win)
+                end)
             end
             dap.listeners.after.terminated.dapui_config = function()
                 dapui.close()

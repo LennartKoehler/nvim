@@ -57,7 +57,10 @@ autocmd('BufEnter', {
     end
 })
 
-
+-- make highlight like search highlight
+vim.api.nvim_set_hl(0, "LspReferenceText",  { link = "Search" })
+vim.api.nvim_set_hl(0, "LspReferenceRead",  { link = "Search" })
+vim.api.nvim_set_hl(0, "LspReferenceWrite", { link = "Search" })
 
 
 autocmd('LspAttach', {
@@ -74,7 +77,20 @@ autocmd('LspAttach', {
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    end
+        local highlight_active = false
+
+        local function toggle_highlight()
+          if highlight_active then
+            vim.lsp.buf.clear_references()
+            highlight_active = false
+          else
+            vim.lsp.buf.document_highlight()
+            highlight_active = true
+          end
+        end
+
+        vim.keymap.set("n", "<leader>vhl", toggle_highlight, opts)
+            end
 })
 vim.api.nvim_set_hl(0, "DiagnosticUnnecessary", {})
 
