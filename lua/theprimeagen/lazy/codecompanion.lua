@@ -27,6 +27,7 @@ return {
         },
     },
     config = function()
+
         local adapters = require("codecompanion.adapters")
         require("codecompanion").setup({
           opts = {
