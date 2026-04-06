@@ -3,6 +3,16 @@ vim.opt.guicursor = table.concat({
   "i-ci-ve:ver25-Cursor-blinkon200-blinkoff150-blinkwait300",
   "r-cr-o:hor20-Cursor-blinkon200-blinkoff150-blinkwait300",
 }, ",")
+
+-- set number # (optional - will help to visually verify that it's working)
+-- set textwidth=0
+-- set wrapmargin=0
+-- set wrap
+-- set linebreak # (optional - breaks by word rather than character)
+vim.o.textwidth = 0
+vim.o.wrapmargin = 0
+vim.o.wrap = true
+
 vim.o.cursorline = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -17,7 +27,6 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false

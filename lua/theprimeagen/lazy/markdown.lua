@@ -19,11 +19,11 @@ return {
 
         code = {
             style = "full",
-            sign = false,
+            -- sign = false,
         },
 
         defaults = {
-            file_icons = false,
+            -- file_icons = false,
             -- ...
         },
         checkbox = {

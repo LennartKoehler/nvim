@@ -1,4 +1,5 @@
 -- CodeCompanion local LLM adapter configuration
+-- State machine for tracking LLM output phases
 local modelState = {
     ANTICIPATING_REASONING = 1,
     REASONING = 2,
@@ -10,7 +11,10 @@ local _ollama_state
 
 
 return {
-    "olimorris/codecompanion.nvim",
+    -- "codecompanion",
+    -- dir = "~/projects/codecompanion.nvim",
+    -- "olimorris/codecompanion.nvim",
+    "LennartKoehler/codecompanion.nvim",
     version = "^19.0.0",
     lazy = false,
     dependencies = {
@@ -60,8 +64,8 @@ return {
                         },
                         url = "${base_url}",
                         schema = {
-                            -- model = { default = "vllm/glm-5-fp8-200k" },
-                            model = { default = "vllm/minimax-m2.5-128k" },
+                            model = { default = "vllm/glm-5-fp8-200k" },
+                            -- model = { default = "vllm/minimax-m2.5-128k" },
                             -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },

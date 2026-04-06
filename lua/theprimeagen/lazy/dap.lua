@@ -209,25 +209,25 @@ return {
             vim.api.nvim_create_autocmd("BufWinEnter", create_nav_options("DAP Watches"))
 
             dapui.setup({
-                controls = {
-                icons = {
-                  expanded = "+",        -- for expanded panels
-                  collapsed = "-",       -- for collapsed panels
-                  current_frame = ">",   -- current frame indicator
-                  breakpoint = "B",      -- breakpoint marker
-                  stopped = "S",         -- stopped state
-                  -- Debug actions
-                  disconnect = "X",      -- disconnect
-                  pause = "||",          -- pause
-                  play = ">",            -- play / continue
-                  run_last = "R",        -- rerun last
-                  step_back = "<-",      -- step back
-                  step_into = "v",       -- step into
-                  step_out = "^",        -- step out
-                  step_over = "->",      -- step over
-                  terminate = "!"        -- terminate / stop
-                },
-                },
+                -- controls = {
+                -- icons = {
+                --   expanded = "+",        -- for expanded panels
+                --   collapsed = "-",       -- for collapsed panels
+                --   current_frame = ">",   -- current frame indicator
+                --   breakpoint = "B",      -- breakpoint marker
+                --   stopped = "S",         -- stopped state
+                --   -- Debug actions
+                --   disconnect = "X",      -- disconnect
+                --   pause = "||",          -- pause
+                --   play = ">",            -- play / continue
+                --   run_last = "R",        -- rerun last
+                --   step_back = "<-",      -- step back
+                --   step_into = "v",       -- step into
+                --   step_out = "^",        -- step out
+                --   step_over = "->",      -- step over
+                --   terminate = "!"        -- terminate / stop
+                -- },
+                -- },
                 layouts = {
                     {
                         elements = {
