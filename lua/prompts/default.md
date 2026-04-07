@@ -18,5 +18,5 @@ You should help me code
 
 ## user
 
-The code im talking about is here: #{buffer}
+The code im talking about is here: #{buffer}{all}
 

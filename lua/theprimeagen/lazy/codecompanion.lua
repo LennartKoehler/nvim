@@ -1,4 +1,4 @@
--- CodeCompanion local LLM adapter configuration
+-- CodeCompanion: Local LLM adapter configuration
 -- State machine for tracking LLM output phases
 local modelState = {
     ANTICIPATING_REASONING = 1,
@@ -15,7 +15,7 @@ return {
     -- dir = "~/projects/codecompanion.nvim",
     -- "olimorris/codecompanion.nvim",
     "LennartKoehler/codecompanion.nvim",
-    version = "^19.0.0",
+    -- version = "^19.0.0",
     lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -25,18 +25,26 @@ return {
         { "<leader>cc", "<cmd>CodeCompanion /default<cr>", desc = "Code Companion Chat" },
         { "<leader>cy", "<cmd>CodeCompanionChat<cr>", desc = "Run Test Prompt" },
     },
-    opts = {
-        opts = {
-            log_level = "DEBUG", -- or "TRACE"
-        },
-    },
+
+    -- opts = {
+    --     opts = {
+    --         log_level = "TRACE", -- or "TRACE"
+    --     },
+    -- },
     config = function()
 
         local adapters = require("codecompanion.adapters")
         require("codecompanion").setup({
-          opts = {
-            log_level = "TRACE", -- or "TRACE"
-          },
+          -- opts = {
+          --   log_level = "TRACE", -- or "TRACE"
+          -- },
+              display = {
+                diff = {
+                  -- Diffs with fewer lines than this are shown directly in the chat buffer
+                  -- Diffs with more lines automatically open in a floating window
+                  threshold_for_chat = 0, -- adjust this number to your preference
+                },
+              },
             interactions = {
                 chat = {
                   opts = {

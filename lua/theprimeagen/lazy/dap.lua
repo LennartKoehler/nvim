@@ -231,10 +231,10 @@ return {
                 layouts = {
                     {
                         elements = {
-                            { id = "scopes", size = 0.25, name = "Scopes" },
+                            { id = "scopes", size = 0.4, name = "Scopes" },
                             { id = "stacks", size = 0.25, name = "Stacks" },
-                            { id = "watches", size = 0.25, name = "Watches" },
-                            { id = "breakpoints", size = 0.25, name = "Breakpoints" },
+                            { id = "watches", size = 0.1, name = "Watches" },
+                            { id = "breakpoints", size = 0.1, name = "Breakpoints" },
                         },
                         size = 40,
                         position = "right",
