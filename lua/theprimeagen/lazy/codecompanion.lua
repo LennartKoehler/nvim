@@ -13,8 +13,8 @@ local _ollama_state
 return {
     -- "codecompanion",
     -- dir = "~/projects/codecompanion.nvim",
-    -- "olimorris/codecompanion.nvim",
-    "LennartKoehler/codecompanion.nvim",
+    "olimorris/codecompanion.nvim",
+    -- "LennartKoehler/codecompanion.nvim",
     -- version = "^19.0.0",
     lazy = false,
     dependencies = {
@@ -35,9 +35,9 @@ return {
 
         local adapters = require("codecompanion.adapters")
         require("codecompanion").setup({
-          -- opts = {
-          --   log_level = "TRACE", -- or "TRACE"
-          -- },
+          opts = {
+            log_level = "TRACE", -- or "TRACE"
+          },
               display = {
                 diff = {
                   -- Diffs with fewer lines than this are shown directly in the chat buffer
@@ -72,8 +72,9 @@ return {
                         },
                         url = "${base_url}",
                         schema = {
-                            model = { default = "vllm/glm-5-fp8-200k" },
-                            -- model = { default = "vllm/minimax-m2.5-128k" },
+                            -- model = { default = "vllm/glm-5-fp8-200k" },
+                            -- model = { default = "vllm/frontier" },
+                            model = { default = "vllm/minimax-m2.5-128k" },
                             -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },
