@@ -13,8 +13,8 @@ local _ollama_state
 return {
     -- "codecompanion",
     -- dir = "~/projects/codecompanion.nvim",
-    "olimorris/codecompanion.nvim",
-    -- "LennartKoehler/codecompanion.nvim",
+    -- "olimorris/codecompanion.nvim",
+    "LennartKoehler/codecompanion.nvim",
     -- version = "^19.0.0",
     lazy = false,
     dependencies = {
@@ -74,7 +74,8 @@ return {
                         schema = {
                             -- model = { default = "vllm/glm-5-fp8-200k" },
                             -- model = { default = "vllm/frontier" },
-                            model = { default = "vllm/minimax-m2.5-128k" },
+                            -- model = { default = "vllm/qwen3.5-27b-vision-128k" },
+                            model = { default = "vllm/coder" },
                             -- temperature = { default = 0.7 },
                             -- max_tokens = { default = 2048 },
                         },
