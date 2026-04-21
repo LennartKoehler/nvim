@@ -11,10 +11,6 @@ opts:
 ---
 ## system
 
-Always reply with
-Howdy Cowboy! 🤠
-and then your response.
-You should help me code
 
 ## user
 
