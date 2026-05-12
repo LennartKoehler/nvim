@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+
+if ! command -v tmux >/dev/null 2>&1; then
+echo "tmux not installed"
+return 1
+fi
+
+DIR_NAME=$(basename "$(pwd)")
+
+SESSION_NAME="dev_${DIR_NAME}"
+SESSION_NUMBER=0
+while tmux has-session -t "$SESSION_NAME" 2>/dev/null; do
+    SESSION_NUMBER=$((SESSION_NUMBER + 1))
+    SESSION_NAME="dev_${DIR_NAME}_${SESSION_NUMBER}"
+done
+
+# Create session + windows
+tmux new-session -d -s "$SESSION_NAME" -n nvim
+tmux new-window -t "$SESSION_NAME":2 -n build
+tmux new-window -t "$SESSION_NAME":3 -n window
+tmux send-keys -t "$SESSION_NAME":1 'nvim .' Enter
+
+tmux select-window -t "$SESSION_NAME":1
+
+exec tmux attach -t "$SESSION_NAME"

@@ -110,6 +110,11 @@ return {
     lazy = false,
     config = function()
     local dap = require("dap")
+        dap.adapters.cppdbg = {
+            id = 'cppdbg',
+            type = 'executable',
+            command = '~/.vscode/extensions/ms-vscode.cpptools-*/debugAdapters/bin/OpenDebugAD7',
+        }
         dap.set_log_level("DEBUG")
         dap.defaults.fallback.focus_frame = false
         dap.defaults.fallback.exception_breakpoints = {"uncaught"}

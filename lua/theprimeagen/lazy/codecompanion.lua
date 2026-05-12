@@ -1,4 +1,4 @@
-local _current_model = "vllm/coder"
+local _current_model = "vllm/frontier"
 
 -- Available models
 local available_models = {
@@ -54,8 +54,8 @@ local _ollama_state
 return {
     -- "codecompanion",
     -- dir = "~/projects/codecompanion.nvim",
-    -- "olimorris/codecompanion.nvim",
-    "LennartKoehler/codecompanion.nvim",
+    "olimorris/codecompanion.nvim",
+    -- "LennartKoehler/codecompanion.nvim",
     -- version = "^19.0.0",
     lazy = false,
     dependencies = {
@@ -64,6 +64,7 @@ return {
     },
     keys = {
         { "<leader>cc", "<cmd>CodeCompanion /default<cr>", desc = "Code Companion Chat" },
+        { "<leader>ca", "<cmd>CodeCompanion /defaultagent<cr>", desc = "Code Companion Agent Chat" },
         { "<leader>cy", "<cmd>CodeCompanionChat<cr>", desc = "Run Test Prompt" },
     },
 
@@ -88,6 +89,7 @@ return {
               },
             interactions = {
                 chat = {
+                    adapter = "local_llm",
                   opts = {
                     completion_provider = "cmp", -- blink|cmp|coc|default
                   }
@@ -95,11 +97,6 @@ return {
               },
             autocomplete = false,
             debug = true,
-            strategies = {
-                chat = {
-                    adapter = "local_llm",
-                },
-            },
             adapters = {
                 http = {
                     local_llm = adapters.extend("openai_compatible", {
