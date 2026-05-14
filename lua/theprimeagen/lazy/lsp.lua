@@ -1,7 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-          "p00f/clangd_extensions.nvim",
+        "p00f/clangd_extensions.nvim",
         "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -36,7 +36,6 @@ return {
                 "lua_ls",
                 "marksman",
                 "clangd",
-                "pyright",
                 "pyright",
                 "clangd",
             },
