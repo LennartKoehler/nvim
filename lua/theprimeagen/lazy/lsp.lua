@@ -56,10 +56,11 @@ return {
                     require("clangd_extensions").setup({
                             server = {
                                 capabilities = capabilities,
+                                filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "cu", "cuh" },
                                 handlers = {
                                     ["textDocument/semanticTokens/full"] = function(...) end
                                 },
-                                cmd = { "clangd", "--compile-commands-dir=build" },
+                                cmd = { "clangd", "--compile-commands-dir=build", "--xcuda" },
                                 root_dir = require("lspconfig").util.root_pattern("compile_commands.json", ".git"),
                                 init_options = {
                                     compilationDatabasePath = "build",
