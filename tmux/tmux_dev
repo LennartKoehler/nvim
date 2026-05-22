@@ -19,7 +19,7 @@ done
 # Create session + windows
 tmux new-session -d -s "$SESSION_NAME" -n nvim
 tmux new-window -t "$SESSION_NAME":2 -n build
-tmux new-window -t "$SESSION_NAME":3 -n window
+tmux new-window -t "$SESSION_NAME":3
 tmux send-keys -t "$SESSION_NAME":1 'nvim .' Enter
 
 tmux select-window -t "$SESSION_NAME":1
